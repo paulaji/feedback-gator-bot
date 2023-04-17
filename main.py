@@ -31,6 +31,10 @@ class FeedbackModal(ui.Modal, title="feedback/suggestion(s)"):
 # reportbug modal
 class ReportbugModal(ui.Modal, title = "bug-report regarding website/app"):
   your_bugreport = ui.TextInput(label="Enter the bug you encountered", placeholder = "bug you encountered...", style = discord.TextStyle.long)
+  async def on_submit(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+        channel = client.get_channel("enter channel id here")
+        await channel.send(f"bug-report: {self.your_bugreport}")
 
 # client = commands.Bot(command_prefix = "/", intents = discord.Intents.all())
 
