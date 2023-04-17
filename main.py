@@ -5,14 +5,28 @@ import os
 
 client = commands.Bot(command_prefix = "/", intents = discord.Intents.all())
 
-CHANNEL_ID = # enter the channel id
+CHANNEL_ID = blahblahblah
 channel = client.get_channel(CHANNEL_ID)
 
-# feedback modal
-class FeedbackModal(ui.Modal, title = "feedback/suggestion(s)"):
-  your_feedback = ui.TextInput(label="Enter your feedback/suggestion(s)", placeholder = "type in your feedback/suggestion(s) regarding community/user-experience...", style = discord.TextStyle.long)
-  async def on_submit(self, interaction: discord.Interaction):
-    await interaction.response.send_message(f"feedback/suggestion: {self.your_feedback}")
+# # feedback modal
+# class FeedbackModal(ui.Modal, title = "feedback/suggestion(s)"):
+#   your_feedback = ui.TextInput(label="Enter your feedback/suggestion(s)", placeholder = "type in your feedback/suggestion(s) regarding community/user-experience...", style = discord.TextStyle.long)
+#   async def on_submit(self, interaction: discord.Interaction):
+#     await interaction.response.send_message(f"feedback/suggestion: {self.your_feedback}")
+
+class FeedbackModal(ui.Modal, title="feedback/suggestion(s)"):
+
+    your_feedback = ui.TextInput(
+        label="Enter your feedback/suggestion(s)",
+        placeholder="type in your feedback/suggestion(s) regarding community/user-experience...",
+        style=discord.TextStyle.long
+    )
+
+    async def on_submit(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+        channel = client.get_channel("enter channel id here")
+        await channel.send(f"feedback/suggestion: {self.your_feedback}")
+
 
 # reportbug modal
 class ReportbugModal(ui.Modal, title = "bug-report regarding website/app"):
