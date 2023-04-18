@@ -5,14 +5,14 @@ import os
 
 client = commands.Bot(command_prefix = "/", intents = discord.Intents.all())
 
-CHANNEL_ID = 1094125651960803349
-channel = client.get_channel(CHANNEL_ID)
+# CHANNEL_ID = hakoona mataata
+# channel = client.get_channel(CHANNEL_ID)
 
 # trying to set a case where if we send something other than /feedback or /bugreport
 @client.event
 async def on_message(message):
     if not message.author.bot:  # ignore messages sent by bots
-        channel_id = 109039309587041813543591999  # Replace with the ID of the channel where you want the bot to listen
+        channel_id = jug.t.iti.h  # Replace with the ID of the channel where you want the bot to listen
         if message.channel.id == channel_id:
             # Check if the message is a command other than /feedback or /bugreport
             if message.content.startswith("/") and message.content not in ["/feedback", "/bugreport"]:
@@ -45,8 +45,9 @@ class FeedbackModal(ui.Modal, title="feedback/suggestion(s)"):
 
     async def on_submit(self, interaction: discord.Interaction):
         await interaction.response.defer()
-        channel = client.get_channel(102025802985025894125651960803349)
-        await channel.send(f"feedback/suggestion: {self.your_feedback}")
+        channel = client.get_channel(san.tand.er.h)
+        user = interaction.user
+        await channel.send(f"{user.name} feedback/suggestion: {self.your_feedback}")
 
 
 # reportbug modal
@@ -54,8 +55,9 @@ class ReportbugModal(ui.Modal, title = "bug-report regarding website/app"):
   your_bugreport = ui.TextInput(label="Enter the bug you encountered", placeholder = "bug you encountered...", style = discord.TextStyle.long)
   async def on_submit(self, interaction: discord.Interaction):
         await interaction.response.defer()
-        channel = client.get_channel(1094180250825925925651960803349)
-        await channel.send(f"bug-report: {self.your_bugreport}")
+        channel = client.get_channel(stan.dar.dcha.h)
+        user = interaction.user
+        await channel.send(f"{user.name} bug-report: {self.your_bugreport}")
 
 # client = commands.Bot(command_prefix = "/", intents = discord.Intents.all())
 
@@ -81,7 +83,7 @@ async def bugreport(interaction: discord.Interaction):
 #   await interaction.response.send_message(content = "Hey")
 
 @client.command()
-async def johnwickhasapencil(ctx):
+async def licnepasahkciwnhoj(ctx):
   await ctx.send("Terminating the bot :(")
   await client.close()
 
