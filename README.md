@@ -1,5 +1,7 @@
 # feedback-gator
 
+<img src="Screenshot_3.png" alt="Screenshot 3">
+
 ## Features
 A really useful discord bot which helps in conducting/taking feedbacks/suggestion. 
 Can be used in large servers. 
